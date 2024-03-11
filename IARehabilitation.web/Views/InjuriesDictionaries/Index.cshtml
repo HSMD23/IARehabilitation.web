@@ -1,0 +1,47 @@
+﻿@model IEnumerable<IARehabilitation.web.Data.Entities.InjuriesDictionary>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Injury_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Injury_category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Injury_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Injury_category)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_Injury">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id_Injury">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_Injury">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

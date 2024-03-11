@@ -2,9 +2,10 @@
 using Microsoft.EntityFrameworkCore;
 
 
+
 namespace IARehabilitation.web.Data
 {
-    public class DataContext : DbContext 
+    public class DataContext:DbContext
     {
         
         public DataContext(DbContextOptions<DataContext> options) : base(options)
@@ -19,7 +20,7 @@ namespace IARehabilitation.web.Data
         public DbSet<TreatmentDetail> TreatmentDetails { get; set; }
         public DbSet<TreatmentDictionary> TreatmentDictionaries { get; set; }
         public DbSet<User> Users { get; set; }
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

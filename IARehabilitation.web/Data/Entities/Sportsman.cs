@@ -13,14 +13,14 @@ namespace IARehabilitation.web.Data.Entities
         public string? Sport { get; set; }
         [Required]
         [Range(0, 150, ErrorMessage = "La edad debe estar entre 0 y 150.")]
-        public int Age { get; set; }
+        public int? Age { get; set; }
         [Required]
         [Display(Name = "Género")]
-        public bool Gender { get; set; }
+        public bool? Gender { get; set; }
         [Required]
         [ForeignKey(nameof(User))]
         public int UserId { get; set; } 
-        public User User { get; set; }
+        public User? User { get; set; }
         [Required]
         public ICollection<Consulte>? Consultes { get; set; }
     }
